@@ -9,17 +9,27 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnLineChart;
+    Button btnLineChart,btnBarChart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         btnLineChart = findViewById(R.id.btnLineChart);
+        btnBarChart = findViewById(R.id.btnBarChart);
         btnLineChart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,LineChartActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnBarChart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,BarChartActivity.class);
                 startActivity(intent);
                 finish();
             }
