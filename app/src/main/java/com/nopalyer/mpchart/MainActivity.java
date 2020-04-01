@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnLineChart,btnBarChart;
+    Button btnLineChart,btnBarChart,btnPieChart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnLineChart = findViewById(R.id.btnLineChart);
         btnBarChart = findViewById(R.id.btnBarChart);
+        btnPieChart = findViewById(R.id.btnPieChart);
         btnLineChart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -30,6 +31,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,BarChartActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        btnPieChart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,PieChartActivity.class);
                 startActivity(intent);
                 finish();
             }
